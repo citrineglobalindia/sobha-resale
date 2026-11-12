@@ -7,6 +7,9 @@ import { SITE, AREAS, PROJECTS, FAQS, GUIDES } from './src/data.mjs';
 
 const OUT = path.resolve('dist');
 const TODAY = new Date().toISOString().slice(0, 10);
+import crypto from 'node:crypto';
+const ver = (f) => crypto.createHash('md5').update(fs.readFileSync(f)).digest('hex').slice(0, 8);
+const CSSV = ver('public/css/styles.css'), JSV = ver('public/js/main.js');
 fs.rmSync(OUT, { recursive: true, force: true });
 fs.cpSync('public', OUT, { recursive: true });
 
@@ -120,7 +123,7 @@ ${SITE.gscVerification ? `<meta name="google-site-verification" content="${esc(S
 <link rel="preload" href="/fonts/source-serif-4-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/mulish-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 ${preload ? `<link rel="preload" as="image" href="/img/${preload}.webp" fetchpriority="high">` : ''}
-<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/styles.css?v=${CSSV}">
 <script type="application/ld+json">${JSON.stringify(graph)}</script>
 ${SITE.ga4 ? `<script async src="https://www.googletagmanager.com/gtag/js?id=${SITE.ga4}"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','${SITE.ga4}');</script>` : ''}
 </head>
@@ -131,7 +134,7 @@ ${body}
 </main>
 ${footer()}
 <script>window.SR=${JSON.stringify({ endpoint: SITE.leadEndpoint, wa: SITE.whatsapp })}</script>
-<script src="/js/main.js" defer></script>
+<script src="/js/main.js?v=${JSV}" defer></script>
 </body>
 </html>`;
   const file = path.join(OUT, p === '/' ? 'index.html' : p.replace(/^\//, '') + (p.endsWith('/') ? 'index.html' : ''));
