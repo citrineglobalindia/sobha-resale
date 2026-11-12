@@ -90,7 +90,7 @@ const orgLd = {
   areaServed: [{ '@type': 'City', name: 'Bengaluru' }, ...Object.values(AREAS).map((a) => ({ '@type': 'Place', name: `${a.full}, Bengaluru` }))],
   openingHoursSpecification: [{ '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'], opens: '09:00', closes: '18:00' }],
   contactPoint: SITE.phones.map((p) => ({ '@type': 'ContactPoint', telephone: p.tel, contactType: 'sales', areaServed: 'IN', availableLanguage: ['English', 'Kannada', 'Hindi'] })),
-  founder: [{ '@type': 'Person', name: 'Krishnan A', jobTitle: 'Founder' }, { '@type': 'Person', name: 'Deepa Krishnan', jobTitle: 'Co-Founder' }],
+  founder: [{ '@type': 'Person', name: 'Srinivas Prabhu', jobTitle: 'Co-Founder & Director' }, { '@type': 'Person', name: 'Sevanth Kumar', jobTitle: 'Co-Founder & Director' }],
   priceRange: '₹₹₹₹',
   knowsAbout: ['Sobha resale flats', 'Resale apartments in Bangalore', 'Luxury villas in Bangalore', 'Assignment Agreement', ...PROJECTS.map((p) => p.name)],
   sameAs: [],
@@ -179,9 +179,8 @@ const whyItems = [
 const whySection = () => `<section class="bg-navy"><div class="wrap"><h2 class="title-lines">Why Choose Sobha Resales</h2><hr class="rule c">
 <div class="why">${whyItems.map(([i, t, d]) => `<div>${i}<h3>${t}</h3><p>${d}</p></div>`).join('')}</div></div></section>`;
 
-const team = () => `<div class="team">
-<div><h3>Krishnan A</h3><div class="role">Founder</div><ul><li>Market expert</li><li>Wealth Consultant · AMFI registered Mutual Fund Distributor</li><li>Deep knowledge of Bangalore’s real estate evolution</li></ul></div>
-<div><h3>Deepa Krishnan</h3><div class="role">Co-Founder</div><ul><li>Client relationship &amp; operations</li><li>Manages customer experience</li><li>Ensures honesty &amp; professionalism</li></ul></div></div>`;
+const TEAM = [['Srinivas Prabhu', 'Co-Founder & Director'], ['Sevanth Kumar', 'Co-Founder & Director']];
+const team = () => `<div class="team">${TEAM.map(([n, r]) => `<div><h3>${n}</h3><div class="role">${r}</div></div>`).join('')}</div>`;
 
 const contactPanel = (title = 'Let Us Help You Plan') => `<aside class="panel-navy"><h2 style="font-size:1.9rem">${title}</h2><hr class="rule">
 <ul class="clist" style="margin-bottom:22px">
@@ -255,8 +254,8 @@ ${whySection()}
 page({
   path: '/about/', cur: '/about/', priority: 0.8, preload: 'hero-about',
   title: 'About Sobha Resales — Sobha Resale Experts in Bangalore',
-  desc: 'Sobha Resales, powered by SS Homes, specializes in premium Sobha resale homes in Bengaluru. Meet founders Krishnan A & Deepa Krishnan.',
-  keywords: 'sobha resales, ss homes bangalore, sobha resale agent, sobha resale broker bangalore, real estate consultant bangalore, krishnan a ss homes',
+  desc: 'Sobha Resales, powered by SS Homes, specializes in premium Sobha resale homes in Bengaluru. Meet co-founders Srinivas Prabhu & Sevanth Kumar.',
+  keywords: 'sobha resales, ss homes bangalore, sobha resale agent, sobha resale broker bangalore, real estate consultant bangalore, srinivas prabhu, sevanth kumar',
   body: `${hero({ image: 'hero-about', h1: 'Your Trusted Partner in Sobha Resales', crumbs: [['/about/', 'About Us']], alt: 'Entrance of a premium Sobha community at dusk — illustrative' })}
 <section><div class="wrap split">${img('pergola', 'Landscaped pergola and gardens in a premium Sobha community — illustrative', { w: 992, h: 552 })}
 <div><hr class="rule" style="margin-top:0"><h2>Premium homes.<br>Personal expertise.</h2><p>Sobha Resales, powered by SS Homes, specializes in premium and luxury resale homes across Sobha’s top communities in Bengaluru. With verified listings and expert knowledge, we help homebuyers access high-quality and high-value resale properties built by Sobha.</p>
