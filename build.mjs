@@ -179,8 +179,11 @@ const whyItems = [
 const whySection = () => `<section class="bg-navy"><div class="wrap"><h2 class="title-lines">Why Choose Sobha Resales</h2><hr class="rule c">
 <div class="why">${whyItems.map(([i, t, d]) => `<div>${i}<h3>${t}</h3><p>${d}</p></div>`).join('')}</div></div></section>`;
 
-const TEAM = [['Srinivas Prabhu', 'Co-Founder & Director'], ['Sevanth Kumar', 'Co-Founder & Director']];
-const team = () => `<div class="team">${TEAM.map(([n, r]) => `<div><h3>${n}</h3><div class="role">${r}</div></div>`).join('')}</div>`;
+const TEAM = [
+  ['Srinivas Prabhu', 'Co-Founder & Director', ['Market expert across Sobha communities', 'Leads strategy, pricing & channel partnerships', 'Deep knowledge of Bengaluru’s real estate landscape']],
+  ['Sevanth Kumar', 'Co-Founder & Director', ['Client relationships & operations', 'Manages site visits & customer experience', 'Ensures honesty, transparency & professionalism']],
+];
+const team = () => `<div class="team">${TEAM.map(([n, r, pts]) => `<div><h3>${n}</h3><div class="role">${r.replace('&', '&amp;')}</div><ul>${pts.map((x) => `<li>${x.replace('&', '&amp;')}</li>`).join('')}</ul></div>`).join('')}</div>`;
 
 const contactPanel = (title = 'Let Us Help You Plan') => `<aside class="panel-navy"><h2 style="font-size:1.9rem">${title}</h2><hr class="rule">
 <ul class="clist" style="margin-bottom:22px">
