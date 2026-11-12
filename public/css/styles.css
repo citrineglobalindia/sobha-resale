@@ -438,3 +438,9 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold-d);
   .mbar{padding-left:8px;padding-right:8px;gap:6px}
   .mbar a{font-size:.84rem;gap:5px}
 }
+
+/* Brand logo image */
+.logo img{height:46px;width:auto;display:block}
+.ftr .logo img{height:54px}
+@media (max-width:620px){.logo img{height:38px}.ftr .logo img{height:46px}}
+@media (max-width:400px){.logo img{height:34px}}

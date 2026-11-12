@@ -52,14 +52,14 @@ const NAV = [['/', 'Home'], ['/about/', 'About'], ['/properties/', 'Properties']
 
 const header = (cur) => `<a class="skip" href="#main">Skip to content</a>
 <header class="hdr"><div class="wrap">
-<a class="logo" href="/" aria-label="Sobha Resales — home">${I.logo}<span class="bar"></span><span><b>SOBHA RESALES</b><small>Powered by SS Homes</small></span></a>
+<a class="logo" href="/" aria-label="Sobha Resales — Sobha Authorized Channel Partner, home"><img src="/img/brand/sobha-channel-partner-light.png" alt="Sobha — Authorized Channel Partner" width="293" height="93"></a>
 <button class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><svg width="22" height="22" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
 <nav id="nav" class="nav" aria-label="Main">${NAV.map(([h, t]) => `<a href="${h}"${cur === h ? ' aria-current="page"' : ''}>${t}</a>`).join('')}<a class="btn btn-gold btn-sm" href="/request-visit/">Enquire Now</a></nav>
 </div></header>`;
 
 const footer = () => `<footer class="ftr"><div class="wrap">
 <div class="cols">
-<div><a class="logo" href="/">${I.logo}<span class="bar"></span><span><b>SOBHA RESALES</b><small>Powered by SS Homes</small></span></a>
+<div><a class="logo" href="/"><img src="/img/brand/sobha-channel-partner-light.png" alt="Sobha — Authorized Channel Partner" width="293" height="93" loading="lazy"></a>
 <p style="margin-top:18px">Premium and luxury resale apartments &amp; villas across Sobha communities in Bengaluru. Buy, sell and visit with a team that knows every project.</p></div>
 <div><h3>Quick Links</h3><ul>${NAV.map(([h, t]) => `<li><a href="${h}">${t}</a></li>`).join('')}<li><a href="/request-visit/">Request a Visit</a></li></ul></div>
 <div><h3>Sobha Resale by Location</h3><ul>${Object.entries(AREAS).map(([k, a]) => `<li><a href="/locations/${k}/">Sobha resale in ${a.name}</a></li>`).join('')}</ul></div>
@@ -70,7 +70,7 @@ ${SITE.emails.map((e) => `<li>${I.mail}<a href="mailto:${e}">${e}</a></li>`).joi
 <li>${I.clock}<span>${SITE.hours} · ${SITE.hoursNote}</span></li></ul></div>
 </div>
 <div class="base"><span>© ${new Date().getFullYear()} Sobha Resales. Powered by SS Homes. All rights reserved.</span>
-<span class="disclaimer">Sobha Resales is an independent resale brokerage operated by SS Homes and is not affiliated with or endorsed by Sobha Limited. Project names belong to their respective owners. Images are illustrative.</span></div>
+<span class="disclaimer">Sobha Resales is operated by SS Homes, a Sobha Authorized Channel Partner. The Sobha name and logo are trademarks of Sobha Limited. Images are illustrative.</span></div>
 </div></footer>
 <nav class="mbar" aria-label="Quick actions"><a href="tel:${P0.tel}">${I.phone}<span>Call</span></a><a href="${wa()}" target="_blank" rel="noopener" class="wa">${I.wa}<span>WhatsApp</span></a><a href="/request-visit/" class="go">${I.cal}<span>Book Visit</span></a></nav>
 <div class="fab"><a class="wa" href="${wa()}" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">${I.wa}</a><a class="call" href="tel:${P0.tel}" aria-label="Call ${P0.display}">${I.phone}</a></div>`;
@@ -82,7 +82,7 @@ const ORG_ID = abs('/#organization');
 const orgLd = {
   '@type': ['RealEstateAgent', 'LocalBusiness'], '@id': ORG_ID,
   name: 'Sobha Resales', alternateName: ['Sobha Resales by SS Homes', 'SS Homes'],
-  url: abs('/'), logo: abs('/favicon.svg'), image: abs('/img/og-image.jpg'),
+  url: abs('/'), logo: abs('/img/brand/sobha-channel-partner-dark.png'), image: abs('/img/og-image.jpg'),
   description: 'Sobha Resales, powered by SS Homes, specializes in premium and luxury resale apartments and villas across Sobha communities in Bengaluru — for buyers and sellers.',
   telephone: P0.tel, email: SITE.emails[0],
   address: { '@type': 'PostalAddress', streetAddress: SITE.address.street, addressLocality: SITE.address.locality, addressRegion: SITE.address.region, postalCode: SITE.address.postalCode, addressCountry: SITE.address.country },
@@ -119,7 +119,7 @@ ${keywords ? `<meta name="keywords" content="${esc(keywords)}">` : ''}
 <meta property="og:image" content="${abs(ogImg)}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Sobha Resales — premium Sobha resale homes in Bengaluru">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${esc(title)}"><meta name="twitter:description" content="${esc(desc)}"><meta name="twitter:image" content="${abs(ogImg)}">
 ${SITE.gscVerification ? `<meta name="google-site-verification" content="${esc(SITE.gscVerification)}">` : ''}
-<link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest">
+<link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32"><link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest">
 <link rel="preload" href="/fonts/source-serif-4-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/mulish-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 ${preload ? `<link rel="preload" as="image" href="/img/${preload}.webp" fetchpriority="high">` : ''}
@@ -573,6 +573,6 @@ ${pages.map((p) => `  <url><loc>${p.loc}</loc><lastmod>${TODAY}</lastmod><priori
 </urlset>
 `);
 fs.writeFileSync(path.join(OUT, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${SITE.url}/sitemap.xml\n`);
-fs.writeFileSync(path.join(OUT, 'llms.txt'), `# Sobha Resales (powered by SS Homes)\n\n> Independent resale brokerage for premium and luxury Sobha apartments and villas in Bengaluru, India. Helps buyers find verified resale homes and helps owners sell. Not affiliated with Sobha Limited.\n\n- Phone: ${SITE.phones.map((p) => p.display).join(', ')}\n- Email: ${SITE.emails.join(', ')}\n- Office: SS Homes, ${SITE.address.street}, Bengaluru ${SITE.address.postalCode}\n- Hours: ${SITE.hours} (${SITE.hoursNote})\n- Brokerage: ${SITE.brokerage}\n\n## Projects\n${PROJECTS.map((p) => `- [${p.name} — ${areaOf(p).full}](${abs(`/properties/${p.slug}/`)})`).join('\n')}\n\n## Pages\n- [Sell your Sobha property](${abs('/sell-sobha-property/')})\n- [Request a visit](${abs('/request-visit/')})\n- [FAQs](${abs('/faqs/')})\n- [Contact](${abs('/contact/')})\n`);
-fs.writeFileSync(path.join(OUT, 'site.webmanifest'), JSON.stringify({ name: 'Sobha Resales', short_name: 'Sobha Resales', start_url: '/', display: 'standalone', background_color: '#f8f3ea', theme_color: '#0b1629', icons: [{ src: '/favicon.svg', sizes: 'any', type: 'image/svg+xml' }, { src: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }] }));
+fs.writeFileSync(path.join(OUT, 'llms.txt'), `# Sobha Resales (powered by SS Homes)\n\n> Independent resale brokerage for premium and luxury Sobha apartments and villas in Bengaluru, India. Helps buyers find verified resale homes and helps owners sell. Operated by SS Homes, a Sobha Authorized Channel Partner.\n\n- Phone: ${SITE.phones.map((p) => p.display).join(', ')}\n- Email: ${SITE.emails.join(', ')}\n- Office: SS Homes, ${SITE.address.street}, Bengaluru ${SITE.address.postalCode}\n- Hours: ${SITE.hours} (${SITE.hoursNote})\n- Brokerage: ${SITE.brokerage}\n\n## Projects\n${PROJECTS.map((p) => `- [${p.name} — ${areaOf(p).full}](${abs(`/properties/${p.slug}/`)})`).join('\n')}\n\n## Pages\n- [Sell your Sobha property](${abs('/sell-sobha-property/')})\n- [Request a visit](${abs('/request-visit/')})\n- [FAQs](${abs('/faqs/')})\n- [Contact](${abs('/contact/')})\n`);
+fs.writeFileSync(path.join(OUT, 'site.webmanifest'), JSON.stringify({ name: 'Sobha Resales', short_name: 'Sobha Resales', start_url: '/', display: 'standalone', background_color: '#f8f3ea', theme_color: '#0b1629', icons: [{ src: '/icon-192.png', sizes: '192x192', type: 'image/png' }, { src: '/icon-512.png', sizes: '512x512', type: 'image/png' }, { src: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }] }));
 console.log(`Built ${pages.length} pages → ${SITE.url}`);
