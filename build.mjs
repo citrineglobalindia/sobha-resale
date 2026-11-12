@@ -64,8 +64,8 @@ const footer = () => `<footer class="ftr"><div class="wrap">
 <div><h3>Quick Links</h3><ul>${NAV.map(([h, t]) => `<li><a href="${h}">${t}</a></li>`).join('')}<li><a href="/request-visit/">Request a Visit</a></li></ul></div>
 <div><h3>Sobha Resale by Location</h3><ul>${Object.entries(AREAS).map(([k, a]) => `<li><a href="/locations/${k}/">Sobha resale in ${a.name}</a></li>`).join('')}</ul></div>
 <div><h3>Get in Touch</h3><ul class="clist">
-${SITE.phones.map((p) => `<li>${I.phone}<a href="tel:${p.tel}">${p.display}</a></li>`).join('')}
-${SITE.emails.map((e) => `<li>${I.mail}<a href="mailto:${e}">${e}</a></li>`).join('')}
+${SITE.footerPhones.map((p) => `<li>${I.phone}<a href="tel:${p.tel}">${p.display}</a></li>`).join('')}
+${SITE.footerEmails.map((e) => `<li>${I.mail}<a href="mailto:${e}">${e}</a></li>`).join('')}
 <li>${I.pin}<span>SS Homes, ${esc(SITE.address.street)}, Bengaluru – ${SITE.address.postalCode}</span></li>
 <li>${I.clock}<span>${SITE.hours} · ${SITE.hoursNote}</span></li></ul></div>
 </div>

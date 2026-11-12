@@ -11,6 +11,12 @@ export const SITE = {
     { display: '+91 91488 40164', tel: '+919148840164' },
     { display: '+91 78992 66001', tel: '+917899266001' },
   ],
+  // Footer "Get in Touch" contacts
+  footerPhones: [
+    { display: '+91 97396 12117', tel: '+919739612117' },
+    { display: '+91 98452 90699', tel: '+919845290699' },
+  ],
+  footerEmails: ['info@waytonest.in'],
   whatsapp: '919901140164',
   emails: ['ickrishh@gmail.com', 'Deepa@sshomesblr.com'],
   address: {
