@@ -226,7 +226,7 @@ ${hp}${compact ? '' : consent}
 page({
   path: '/', cur: '/', priority: 1.0, preload: 'hero-home',
   title: 'Sobha Resale Flats & Villas in Bangalore | Sobha Resales',
-  desc: 'Buy or sell verified Sobha resale apartments & villas in Bengaluru — Dream Acres, Windsor, Sentosa, Town Park, Victoria Park & more. Call +91 99011 40164.',
+  desc: 'Buy or sell verified Sobha resale apartments & villas in Bengaluru — Dream Acres, Windsor, Sentosa, Town Park, Victoria Park & more. Call +91 97396 12117.',
   keywords: 'sobha resale, sobha resale flats bangalore, sobha resale apartments, sobha resale villas, resale flats in bangalore, sobha apartments for sale bangalore, sobha dream acres resale, sobha windsor resale, sobha sentosa resale, luxury resale homes bangalore',
   body: `${hero({ image: 'hero-home', eyebrow: 'Sobha Resales', h1: 'Premium &amp; Luxury Sobha Resale Homes in Bengaluru', alt: 'Premium Sobha residential towers with pool at dusk, Bengaluru — illustrative',
     lead: 'Discover verified resale apartments &amp; villas in Bengaluru’s most prestigious Sobha communities — or sell your Sobha home with expert, end-to-end support.',
