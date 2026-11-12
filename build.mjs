@@ -294,7 +294,7 @@ page({
 <div class="grid g3">${PROJECTS.map((p) => pcard(p)).join('')}</div>
 </div></section>
 <section class="bg-paper"><div class="wrap"><h2 class="title-lines">Our Focus Projects</h2><hr class="rule c">${focusList()}</div></section>
-<section class="strip"><div class="wrap"><h2>Looking for a specific Sobha home?</h2><a class="btn btn-gold" href="/contact/">Speak to Our Team</a><a class="btn btn-line" href="tel:${P0.tel}">${I.phone} ${P0.display}</a></div></section>`,
+<section class="strip"><div class="wrap"><h2>Looking for a specific Sobha home?</h2><a class="btn btn-gold" href="/contact/">Speak to Our Team</a><a class="btn btn-line" href="tel:${SITE.footerPhones[0].tel}">${I.phone} ${SITE.footerPhones[0].display}</a></div></section>`,
   ld: [crumbsLd([['/properties/', 'Properties']]), { '@type': 'CollectionPage', url: abs('/properties/'), name: 'Sobha resale properties in Bengaluru' },
     { '@type': 'ItemList', itemListElement: PROJECTS.map((p, i) => ({ '@type': 'ListItem', position: i + 1, url: abs(`/properties/${p.slug}/`), name: `${p.name}, ${areaOf(p).full}` })) }],
 });
