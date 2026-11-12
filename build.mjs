@@ -60,7 +60,8 @@ const header = (cur) => `<a class="skip" href="#main">Skip to content</a>
 const footer = () => `<footer class="ftr"><div class="wrap">
 <div class="cols">
 <div><a class="logo" href="/"><img src="/img/brand/sobha-channel-partner-light.png" alt="Sobha — Authorized Channel Partner" width="293" height="93" loading="lazy"></a>
-<p style="margin-top:18px">Premium and luxury resale apartments &amp; villas across Sobha communities in Bengaluru. Buy, sell and visit with a team that knows every project.</p></div>
+<p style="margin:16px 0 0;color:var(--gold-2);font-weight:700;font-size:.95rem">Channel Partner: ${SITE.channelPartner}</p>
+<p style="margin-top:12px">Premium and luxury resale apartments &amp; villas across Sobha communities in Bengaluru. Buy, sell and visit with a team that knows every project.</p></div>
 <div><h3>Quick Links</h3><ul>${NAV.map(([h, t]) => `<li><a href="${h}">${t}</a></li>`).join('')}<li><a href="/request-visit/">Request a Visit</a></li></ul></div>
 <div><h3>Sobha Resale by Location</h3><ul>${Object.entries(AREAS).map(([k, a]) => `<li><a href="/locations/${k}/">Sobha resale in ${a.name}</a></li>`).join('')}</ul></div>
 <div><h3>Get in Touch</h3><ul class="clist">
@@ -70,7 +71,7 @@ ${SITE.footerEmails.map((e) => `<li>${I.mail}<a href="mailto:${e}">${e}</a></li>
 <li>${I.clock}<span>${SITE.hours} · ${SITE.hoursNote}</span></li></ul></div>
 </div>
 <div class="base"><span>© ${new Date().getFullYear()} Sobha Resales. Powered by SS Homes. All rights reserved.<br>Designed and developed by <a href="https://stepstones.in" target="_blank" rel="noopener" style="color:var(--gold-2)">Stepstones</a></span>
-<span class="disclaimer">Sobha Resales is operated by SS Homes, a Sobha Authorized Channel Partner. The Sobha name and logo are trademarks of Sobha Limited. Images are illustrative.</span></div>
+<span class="disclaimer">Sobha Resales is powered by SS Homes. Sobha Authorized Channel Partner: ${SITE.channelPartner} The Sobha name and logo are trademarks of Sobha Limited. Images are illustrative.</span></div>
 </div></footer>
 <nav class="mbar" aria-label="Quick actions"><a href="tel:${P0.tel}">${I.phone}<span>Call</span></a><a href="${wa()}" target="_blank" rel="noopener" class="wa">${I.wa}<span>WhatsApp</span></a><a href="/request-visit/" class="go">${I.cal}<span>Book Visit</span></a></nav>
 <div class="fab"><a class="wa" href="${wa()}" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">${I.wa}</a><a class="call" href="tel:${P0.tel}" aria-label="Call ${P0.display}">${I.phone}</a></div>`;
@@ -81,7 +82,7 @@ const crumbsLd = (list) => ({ '@type': 'BreadcrumbList', itemListElement: [['/',
 const ORG_ID = abs('/#organization');
 const orgLd = {
   '@type': ['RealEstateAgent', 'LocalBusiness'], '@id': ORG_ID,
-  name: 'Sobha Resales', alternateName: ['Sobha Resales by SS Homes', 'SS Homes'],
+  name: 'Sobha Resales', alternateName: ['Sobha Resales by SS Homes', 'SS Homes', 'WaytoNest Pvt. Ltd.'],
   url: abs('/'), logo: abs('/img/brand/sobha-channel-partner-dark.png'), image: abs('/img/og-image.jpg'),
   description: 'Sobha Resales, powered by SS Homes, specializes in premium and luxury resale apartments and villas across Sobha communities in Bengaluru — for buyers and sellers.',
   telephone: P0.tel, email: SITE.emails[0],
@@ -573,6 +574,6 @@ ${pages.map((p) => `  <url><loc>${p.loc}</loc><lastmod>${TODAY}</lastmod><priori
 </urlset>
 `);
 fs.writeFileSync(path.join(OUT, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${SITE.url}/sitemap.xml\n`);
-fs.writeFileSync(path.join(OUT, 'llms.txt'), `# Sobha Resales (powered by SS Homes)\n\n> Independent resale brokerage for premium and luxury Sobha apartments and villas in Bengaluru, India. Helps buyers find verified resale homes and helps owners sell. Operated by SS Homes, a Sobha Authorized Channel Partner.\n\n- Phone: ${SITE.phones.map((p) => p.display).join(', ')}\n- Email: ${SITE.emails.join(', ')}\n- Office: SS Homes, ${SITE.address.street}, Bengaluru ${SITE.address.postalCode}\n- Hours: ${SITE.hours} (${SITE.hoursNote})\n- Brokerage: ${SITE.brokerage}\n\n## Projects\n${PROJECTS.map((p) => `- [${p.name} — ${areaOf(p).full}](${abs(`/properties/${p.slug}/`)})`).join('\n')}\n\n## Pages\n- [Sell your Sobha property](${abs('/sell-sobha-property/')})\n- [Request a visit](${abs('/request-visit/')})\n- [FAQs](${abs('/faqs/')})\n- [Contact](${abs('/contact/')})\n`);
+fs.writeFileSync(path.join(OUT, 'llms.txt'), `# Sobha Resales (powered by SS Homes)\n\n> Independent resale brokerage for premium and luxury Sobha apartments and villas in Bengaluru, India. Helps buyers find verified resale homes and helps owners sell. Powered by SS Homes; Sobha Authorized Channel Partner: WaytoNest Pvt. Ltd.\n\n- Phone: ${SITE.phones.map((p) => p.display).join(', ')}\n- Email: ${SITE.emails.join(', ')}\n- Office: SS Homes, ${SITE.address.street}, Bengaluru ${SITE.address.postalCode}\n- Hours: ${SITE.hours} (${SITE.hoursNote})\n- Brokerage: ${SITE.brokerage}\n\n## Projects\n${PROJECTS.map((p) => `- [${p.name} — ${areaOf(p).full}](${abs(`/properties/${p.slug}/`)})`).join('\n')}\n\n## Pages\n- [Sell your Sobha property](${abs('/sell-sobha-property/')})\n- [Request a visit](${abs('/request-visit/')})\n- [FAQs](${abs('/faqs/')})\n- [Contact](${abs('/contact/')})\n`);
 fs.writeFileSync(path.join(OUT, 'site.webmanifest'), JSON.stringify({ name: 'Sobha Resales', short_name: 'Sobha Resales', start_url: '/', display: 'standalone', background_color: '#f8f3ea', theme_color: '#0b1629', icons: [{ src: '/icon-192.png', sizes: '192x192', type: 'image/png' }, { src: '/icon-512.png', sizes: '512x512', type: 'image/png' }, { src: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }] }));
 console.log(`Built ${pages.length} pages → ${SITE.url}`);

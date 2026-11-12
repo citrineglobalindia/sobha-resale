@@ -17,6 +17,7 @@ export const SITE = {
     { display: '+91 98452 90699', tel: '+919845290699' },
   ],
   footerEmails: ['info@waytonest.in'],
+  channelPartner: 'WaytoNest Pvt. Ltd.',
   whatsapp: '919901140164',
   emails: ['ickrishh@gmail.com', 'Deepa@sshomesblr.com'],
   address: {
@@ -101,7 +102,7 @@ export const FAQS = {
     ['What does Sobha Resales specialize in?', 'Sobha Resales, powered by SS Homes, specializes in premium and luxury resale homes across Sobha communities in Bengaluru — helping buyers find verified resale apartments and villas, and helping owners sell their Sobha property.'],
     ['Which Sobha projects do you focus on?', 'Our focus projects include Sobha Victoria Park (Hennur), Sobha Windsor (Whitefield), Sobha Town Park (Hosur Road), Sobha Dream Acres (Panathur), Sobha Lifestyle Legacy (Devanahalli), Sobha Royal Pavilion (Sarjapur), Sobha Sentosa (Panathur Road), Sobha Indraprastha (Rajajinagar), Sobha Dream Gardens (Thanisandra) and Sobha Oakshire (Devanahalli).'],
     ['When can I visit your office?', 'Our SS Homes office at Dodda Banaswadi, Bengaluru 560043 is open Monday to Sunday, 9am–6pm, on appointments only. Call +91 99011 40164 to book a time.'],
-    ['Is Sobha Resales a Sobha channel partner?', 'Yes. Sobha Resales is operated by SS Homes, a Sobha Authorized Channel Partner, helping buyers and owners transact resale homes in Sobha-built communities across Bengaluru.'],
+    ['Is Sobha Resales a Sobha channel partner?', 'Yes. Sobha Resales, powered by SS Homes, works through WaytoNest Pvt. Ltd., a Sobha Authorized Channel Partner, helping buyers and owners transact resale homes in Sobha-built communities across Bengaluru.'],
   ],
   'Buying a Home': [
     ['How does resale availability work?', 'Resale inventory is supply-driven. Availability is limited and units can move quickly, so quick decision-making helps. Contact our team for current options in your preferred Sobha community.'],
