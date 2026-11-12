@@ -72,7 +72,7 @@ ${SITE.footerEmails.map((e) => `<li>${I.mail}<a href="mailto:${e}">${e}</a></li>
 </div>
 <div class="fbase">
 <div class="fbase-row">
-<p class="fb-copy">© ${new Date().getFullYear()} Sobha Resales<span class="dot">·</span>Powered by SS Homes</p>
+<p class="fb-copy">© ${new Date().getFullYear()} Sobha Resales</p>
 <p class="fb-partner"><span>Sobha Authorized Channel Partner</span><strong>${SITE.channelPartner}</strong></p>
 <p class="fb-credit">Designed &amp; developed by <a href="https://stepstones.in" target="_blank" rel="noopener">Stepstones</a></p>
 </div>
@@ -90,8 +90,8 @@ const ORG_ID = abs('/#organization');
 const orgLd = {
   '@type': ['RealEstateAgent', 'LocalBusiness'], '@id': ORG_ID,
   name: 'Sobha Resales', alternateName: ['Sobha Resales by SS Homes', 'SS Homes', 'WaytoNest Pvt. Ltd.'],
-  url: abs('/'), logo: abs('/img/brand/sobha-channel-partner-dark.png'), image: abs('/img/og-image.jpg'),
-  description: 'Sobha Resales, powered by SS Homes, specializes in premium and luxury resale apartments and villas across Sobha communities in Bengaluru — for buyers and sellers.',
+  url: abs('/'), logo: abs('/img/brand/sobha-channel-partner-dark.png'), image: abs('/img/og-cover.jpg'),
+  description: 'Sobha Resales specializes in premium and luxury resale apartments and villas across Sobha communities in Bengaluru — for buyers and sellers.',
   telephone: P0.tel, email: SITE.emails[0],
   address: { '@type': 'PostalAddress', streetAddress: SITE.address.street, addressLocality: SITE.address.locality, addressRegion: SITE.address.region, postalCode: SITE.address.postalCode, addressCountry: SITE.address.country },
   areaServed: [{ '@type': 'City', name: 'Bengaluru' }, ...Object.values(AREAS).map((a) => ({ '@type': 'Place', name: `${a.full}, Bengaluru` }))],
@@ -105,7 +105,7 @@ const orgLd = {
 const websiteLd = { '@type': 'WebSite', '@id': abs('/#website'), url: abs('/'), name: 'Sobha Resales', inLanguage: 'en-IN', publisher: { '@id': ORG_ID } };
 const faqLd = (items) => ({ '@type': 'FAQPage', mainEntity: items.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) });
 
-function page({ path: p, title, desc, keywords, h1Img, body, ld = [], cur, ogImg = '/img/og-image.jpg', type = 'website', priority = 0.7, preload }) {
+function page({ path: p, title, desc, keywords, h1Img, body, ld = [], cur, ogImg = '/img/og-cover.jpg', type = 'website', priority = 0.7, preload }) {
   const url = abs(p);
   const graph = { '@context': 'https://schema.org', '@graph': [websiteLd, orgLd, { '@type': 'WebPage', '@id': url + '#webpage', url, name: title, description: desc, isPartOf: { '@id': abs('/#website') }, about: { '@id': ORG_ID }, inLanguage: 'en-IN', primaryImageOfPage: abs(ogImg) }, ...ld] };
   const html = `<!doctype html>
@@ -241,7 +241,7 @@ page({
 <section class="bg-paper"><div class="wrap split">
 ${img('clubhouse', 'Clubhouse and water feature at a luxury Sobha community, Bengaluru — illustrative', { w: 714, h: 704 })}
 <div><div class="eyebrow">About Sobha Resales</div><h2>Your Trusted Partner for Premium Sobha Resale Homes in Bengaluru</h2>
-<p>Sobha Resales, powered by SS Homes, specializes in premium and luxury resale homes across Sobha’s top communities in Bengaluru. With verified listings and expert knowledge, we help homebuyers access high-quality, high-value resale properties built by Sobha — and help owners sell theirs at the right price.</p>
+<p>Sobha Resales specializes in premium and luxury resale homes across Sobha’s top communities in Bengaluru. With verified listings and expert knowledge, we help homebuyers access high-quality, high-value resale properties built by Sobha — and help owners sell theirs at the right price.</p>
 <details class="acc"><summary>Resale Market Reality</summary><div class="ans"><p>Supply-driven inventory. Limited availability. Fast movement. Quick decision-making required.</p></div></details>
 <details class="acc" open><summary>Brokerage Terms</summary><div class="ans"><p><strong>2%</strong> brokerage fee on the final sale value + <strong>18% GST</strong>. Payable before or on the day of signing the Assignment Agreement.</p></div></details>
 <details class="acc"><summary>Our Focus Projects</summary><div class="ans"><p>${PROJECTS.map((p) => `<a href="/properties/${p.slug}/">${p.name}</a>`).join(' · ')}</p></div></details>
@@ -264,11 +264,11 @@ ${whySection()}
 page({
   path: '/about/', cur: '/about/', priority: 0.8, preload: 'hero-about',
   title: 'About Sobha Resales — Sobha Resale Experts in Bangalore',
-  desc: 'Sobha Resales, powered by SS Homes, specializes in premium Sobha resale homes in Bengaluru. Meet co-founders Srinivas Prabhu & Sevanth Kumar.',
+  desc: 'Sobha Resales specializes in premium Sobha resale homes in Bengaluru. Meet co-founders Srinivas Prabhu & Sevanth Kumar.',
   keywords: 'sobha resales, ss homes bangalore, sobha resale agent, sobha resale broker bangalore, real estate consultant bangalore, srinivas prabhu, sevanth kumar',
   body: `${hero({ image: 'hero-about', h1: 'Your Trusted Partner in Sobha Resales', crumbs: [['/about/', 'About Us']], alt: 'Entrance of a premium Sobha community at dusk — illustrative' })}
 <section><div class="wrap split">${img('pergola', 'Landscaped pergola and gardens in a premium Sobha community — illustrative', { w: 992, h: 552 })}
-<div><hr class="rule" style="margin-top:0"><h2>Premium homes.<br>Personal expertise.</h2><p>Sobha Resales, powered by SS Homes, specializes in premium and luxury resale homes across Sobha’s top communities in Bengaluru. With verified listings and expert knowledge, we help homebuyers access high-quality and high-value resale properties built by Sobha.</p>
+<div><hr class="rule" style="margin-top:0"><h2>Premium homes.<br>Personal expertise.</h2><p>Sobha Resales specializes in premium and luxury resale homes across Sobha’s top communities in Bengaluru. With verified listings and expert knowledge, we help homebuyers access high-quality and high-value resale properties built by Sobha.</p>
 <p>From Hennur and Thanisandra in the north to Whitefield, Panathur and Sarjapur in the east, Rajajinagar in the west and Devanahalli near the airport, we track the resale market in every community we serve — so our clients get realistic prices, genuine inventory and a smooth transaction.</p></div></div></section>
 ${whySection()}
 <section><div class="wrap"><h2 class="center">The Team Behind Sobha Resales</h2><hr class="rule c">${team()}</div></section>
@@ -328,7 +328,7 @@ ${crumbsHtml([['/properties/', 'Properties'], [path_, p.name]])}
 <nav class="subnav" aria-label="On this page"><a href="#overview">Overview</a><a href="#gallery">Gallery</a><a href="#availability">Availability</a><a href="#faq">FAQs</a><a href="#enquire">Enquire</a></nav>
 <div class="two"><div class="prose" id="overview">
 <h2 style="margin-top:0">A premium address in ${esc(a.name)}</h2>
-<p class="muted" style="font-size:1.08rem">Explore resale opportunities at ${esc(p.name)} on ${esc(a.full)}, Bengaluru, with Sobha Resales, powered by SS Homes.</p>
+<p class="muted" style="font-size:1.08rem">Explore resale opportunities at ${esc(p.name)} on ${esc(a.full)}, Bengaluru, with Sobha Resales.</p>
 <div class="facts">
 <div>${I.bldg}<b>Project</b><span>${esc(p.name)}</span></div>
 <div>${I.pin}<b>Location</b><span>${esc(a.full)}, ${esc(a.zone)}</span></div>
@@ -583,6 +583,6 @@ ${pages.map((p) => `  <url><loc>${p.loc}</loc><lastmod>${TODAY}</lastmod><priori
 </urlset>
 `);
 fs.writeFileSync(path.join(OUT, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${SITE.url}/sitemap.xml\n`);
-fs.writeFileSync(path.join(OUT, 'llms.txt'), `# Sobha Resales (powered by SS Homes)\n\n> Independent resale brokerage for premium and luxury Sobha apartments and villas in Bengaluru, India. Helps buyers find verified resale homes and helps owners sell. Powered by SS Homes; Sobha Authorized Channel Partner: WaytoNest Pvt. Ltd.\n\n- Phone: ${SITE.phones.map((p) => p.display).join(', ')}\n- Email: ${SITE.emails.join(', ')}\n- Office: SS Homes, ${SITE.address.street}, Bengaluru ${SITE.address.postalCode}\n- Hours: ${SITE.hours} (${SITE.hoursNote})\n- Brokerage: ${SITE.brokerage}\n\n## Projects\n${PROJECTS.map((p) => `- [${p.name} — ${areaOf(p).full}](${abs(`/properties/${p.slug}/`)})`).join('\n')}\n\n## Pages\n- [Sell your Sobha property](${abs('/sell-sobha-property/')})\n- [Request a visit](${abs('/request-visit/')})\n- [FAQs](${abs('/faqs/')})\n- [Contact](${abs('/contact/')})\n`);
+fs.writeFileSync(path.join(OUT, 'llms.txt'), `# Sobha Resales\n\n> Independent resale brokerage for premium and luxury Sobha apartments and villas in Bengaluru, India. Helps buyers find verified resale homes and helps owners sell. Sobha Authorized Channel Partner: WaytoNest Pvt. Ltd.\n\n- Phone: ${SITE.phones.map((p) => p.display).join(', ')}\n- Email: ${SITE.emails.join(', ')}\n- Office: SS Homes, ${SITE.address.street}, Bengaluru ${SITE.address.postalCode}\n- Hours: ${SITE.hours} (${SITE.hoursNote})\n- Brokerage: ${SITE.brokerage}\n\n## Projects\n${PROJECTS.map((p) => `- [${p.name} — ${areaOf(p).full}](${abs(`/properties/${p.slug}/`)})`).join('\n')}\n\n## Pages\n- [Sell your Sobha property](${abs('/sell-sobha-property/')})\n- [Request a visit](${abs('/request-visit/')})\n- [FAQs](${abs('/faqs/')})\n- [Contact](${abs('/contact/')})\n`);
 fs.writeFileSync(path.join(OUT, 'site.webmanifest'), JSON.stringify({ name: 'Sobha Resales', short_name: 'Sobha Resales', start_url: '/', display: 'standalone', background_color: '#f8f3ea', theme_color: '#0b1629', icons: [{ src: '/icon-192.png', sizes: '192x192', type: 'image/png' }, { src: '/icon-512.png', sizes: '512x512', type: 'image/png' }, { src: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }] }));
 console.log(`Built ${pages.length} pages → ${SITE.url}`);
