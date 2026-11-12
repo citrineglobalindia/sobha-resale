@@ -69,6 +69,7 @@ ${SITE.emails.map((e) => `<li>${I.mail}<a href="mailto:${e}">${e}</a></li>`).joi
 <div class="base"><span>© ${new Date().getFullYear()} Sobha Resales. Powered by SS Homes. All rights reserved.</span>
 <span class="disclaimer">Sobha Resales is an independent resale brokerage operated by SS Homes and is not affiliated with or endorsed by Sobha Limited. Project names belong to their respective owners. Images are illustrative.</span></div>
 </div></footer>
+<nav class="mbar" aria-label="Quick actions"><a href="tel:${P0.tel}">${I.phone}<span>Call</span></a><a href="${wa()}" target="_blank" rel="noopener" class="wa">${I.wa}<span>WhatsApp</span></a><a href="/request-visit/" class="go">${I.cal}<span>Book Visit</span></a></nav>
 <div class="fab"><a class="wa" href="${wa()}" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">${I.wa}</a><a class="call" href="tel:${P0.tel}" aria-label="Call ${P0.display}">${I.phone}</a></div>`;
 
 const crumbsHtml = (list) => `<nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a>${list.map(([h, t], i) => `<span class="sep">/</span>${i === list.length - 1 ? `<span aria-current="page">${esc(t)}</span>` : `<a href="${h}">${esc(t)}</a>`}`).join('')}</nav>`;
@@ -153,7 +154,7 @@ const pcard = (p, { big = false } = {}) => {
   return `<article class="pcard" data-area="${p.area}">
 <a class="ph" href="/properties/${p.slug}/" tabindex="-1" aria-hidden="true">${img(p.img, `${p.name} resale apartments, ${a.full}, Bengaluru — illustrative visual`, { w: 640, h: 360 })}</a>
 <div class="bd"><h3><a href="/properties/${p.slug}/">${esc(p.name)}</a></h3><div class="loc">${I.pin}${esc(a.full)}</div></div>
-<div class="acts"><a class="btn btn-gold btn-sm" href="/request-visit/?project=${encodeURIComponent(p.name)}">Enquire for Availability</a><a class="btn btn-line btn-sm" href="/properties/${p.slug}/">View Property ${I.arrow}</a></div>
+<div class="acts"><a class="btn btn-gold btn-sm" href="/request-visit/?project=${encodeURIComponent(p.name)}">Enquire<span class="hide-sm"> for Availability</span></a><a class="btn btn-line btn-sm" href="/properties/${p.slug}/">View Property ${I.arrow}</a></div>
 </article>`;
 };
 
@@ -191,7 +192,7 @@ const ctaBand = (h, btns, image = 'cta-band') => `<section class="band">${img(im
 const callBtns = `<a class="btn btn-gold" href="tel:${P0.tel}">${I.phone} Call ${P0.display}</a><a class="btn btn-line" href="${wa()}" target="_blank" rel="noopener">${I.wa} WhatsApp Us</a>`;
 
 const finder = () => `<form class="finder" data-finder role="search" aria-label="Find Sobha resale homes">
-<h2>Find your<br>next address</h2>
+<h2>Find your <br>next address</h2>
 <div><label for="f-loc">Location</label><select id="f-loc" name="location"><option value="">Select Location</option>${Object.entries(AREAS).map(([k, a]) => `<option value="${k}">${a.full}</option>`).join('')}</select></div>
 <div><label for="f-proj">Project</label><select id="f-proj" name="project"><option value="">Select Sobha Project</option>${PROJECTS.map((p) => `<option value="${p.slug}">${esc(p.name)}</option>`).join('')}</select></div>
 <button class="btn btn-gold" type="submit">Explore Homes ${I.arrow}</button></form>`;
