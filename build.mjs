@@ -69,7 +69,7 @@ ${SITE.footerEmails.map((e) => `<li>${I.mail}<a href="mailto:${e}">${e}</a></li>
 <li>${I.pin}<span>SS Homes, ${esc(SITE.address.street)}, Bengaluru – ${SITE.address.postalCode}</span></li>
 <li>${I.clock}<span>${SITE.hours} · ${SITE.hoursNote}</span></li></ul></div>
 </div>
-<div class="base"><span>© ${new Date().getFullYear()} Sobha Resales. Powered by SS Homes. All rights reserved.</span>
+<div class="base"><span>© ${new Date().getFullYear()} Sobha Resales. Powered by SS Homes. All rights reserved.<br>Designed and developed by <a href="https://stepstones.in" target="_blank" rel="noopener" style="color:var(--gold-2)">Stepstones</a></span>
 <span class="disclaimer">Sobha Resales is operated by SS Homes, a Sobha Authorized Channel Partner. The Sobha name and logo are trademarks of Sobha Limited. Images are illustrative.</span></div>
 </div></footer>
 <nav class="mbar" aria-label="Quick actions"><a href="tel:${P0.tel}">${I.phone}<span>Call</span></a><a href="${wa()}" target="_blank" rel="noopener" class="wa">${I.wa}<span>WhatsApp</span></a><a href="/request-visit/" class="go">${I.cal}<span>Book Visit</span></a></nav>
