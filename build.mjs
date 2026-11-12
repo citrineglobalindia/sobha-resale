@@ -70,8 +70,15 @@ ${SITE.footerEmails.map((e) => `<li>${I.mail}<a href="mailto:${e}">${e}</a></li>
 <li>${I.pin}<a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(SITE.footerAddress)}" target="_blank" rel="noopener">${esc(SITE.footerAddress)}</a></li>
 <li>${I.clock}<span>${SITE.hours} · ${SITE.hoursNote}</span></li></ul></div>
 </div>
-<div class="base"><span>© ${new Date().getFullYear()} Sobha Resales. Powered by SS Homes. All rights reserved.<br>Designed and developed by <a href="https://stepstones.in" target="_blank" rel="noopener" style="color:var(--gold-2)">Stepstones</a></span>
-<span class="disclaimer">Sobha Resales is powered by SS Homes. Sobha Authorized Channel Partner: ${SITE.channelPartner} The Sobha name and logo are trademarks of Sobha Limited. Images are illustrative.</span></div>
+<div class="fbase">
+<div class="fbase-row">
+<p class="fb-copy">© ${new Date().getFullYear()} Sobha Resales<span class="dot">·</span>Powered by SS Homes</p>
+<p class="fb-partner"><span>Sobha Authorized Channel Partner</span><strong>${SITE.channelPartner}</strong></p>
+<p class="fb-credit">Designed &amp; developed by <a href="https://stepstones.in" target="_blank" rel="noopener">Stepstones</a></p>
+</div>
+<div class="fb-orn" aria-hidden="true"><i></i><b>◆</b><i></i></div>
+<p class="fb-legal">The Sobha name and logo are trademarks of Sobha Limited, used under channel-partner authorisation. All images are illustrative. All rights reserved.</p>
+</div>
 </div></footer>
 <nav class="mbar" aria-label="Quick actions"><a href="tel:${P0.tel}">${I.phone}<span>Call</span></a><a href="${wa()}" target="_blank" rel="noopener" class="wa">${I.wa}<span>WhatsApp</span></a><a href="/request-visit/" class="go">${I.cal}<span>Book Visit</span></a></nav>
 <div class="fab"><a class="wa" href="${wa()}" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">${I.wa}</a><a class="call" href="tel:${P0.tel}" aria-label="Call ${P0.display}">${I.phone}</a></div>`;
