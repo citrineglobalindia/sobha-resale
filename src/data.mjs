@@ -2,7 +2,7 @@
 // Sobha Resales — site data. Edit here, then `node build.mjs`.
 // ─────────────────────────────────────────────────────────────
 export const SITE = {
-  url: (process.env.SITE_URL || 'https://sobha-resale.vercel.app').replace(/\/$/, ''),
+  url: (process.env.SITE_URL || 'https://www.sobha-resale.com').replace(/\/$/, ''),
   name: 'Sobha Resales',
   legalName: 'SS Homes',
   tagline: 'Premium & Luxury Sobha Resale Homes in Bengaluru',
