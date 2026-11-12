@@ -67,7 +67,7 @@ const footer = () => `<footer class="ftr"><div class="wrap">
 <div><h3>Get in Touch</h3><ul class="clist">
 ${SITE.footerPhones.map((p) => `<li>${I.phone}<a href="tel:${p.tel}">${p.display}</a></li>`).join('')}
 ${SITE.footerEmails.map((e) => `<li>${I.mail}<a href="mailto:${e}">${e}</a></li>`).join('')}
-<li>${I.pin}<span>SS Homes, ${esc(SITE.address.street)}, Bengaluru – ${SITE.address.postalCode}</span></li>
+<li>${I.pin}<a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(SITE.footerAddress)}" target="_blank" rel="noopener">${esc(SITE.footerAddress)}</a></li>
 <li>${I.clock}<span>${SITE.hours} · ${SITE.hoursNote}</span></li></ul></div>
 </div>
 <div class="base"><span>© ${new Date().getFullYear()} Sobha Resales. Powered by SS Homes. All rights reserved.<br>Designed and developed by <a href="https://stepstones.in" target="_blank" rel="noopener" style="color:var(--gold-2)">Stepstones</a></span>

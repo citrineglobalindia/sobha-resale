@@ -18,6 +18,7 @@ export const SITE = {
   ],
   footerEmails: ['info@waytonest.in'],
   channelPartner: 'WaytoNest Pvt. Ltd.',
+  footerAddress: '3rd Floor, 201, Swamy Vivekananda Rd, 2nd Cross Rd, Narayana Nagar 1st Block, BCMC Layout, Kanakapura Road, Bengaluru, Karnataka 560062',
   whatsapp: '919901140164',
   emails: ['ickrishh@gmail.com', 'Deepa@sshomesblr.com'],
   address: {
