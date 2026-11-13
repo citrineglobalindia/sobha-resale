@@ -255,7 +255,7 @@ ${whySection()}
 <section><div class="wrap split">
 <div><hr class="rule" style="margin-top:0"><h2>Let’s find your next home.</h2><p class="muted">Get in touch with us for verified Sobha resale options, site visits and a personalized consultation.</p>${enquiryForm({ type: 'enquiry' })}</div>
 <div>${img('walkway', 'Evening walkway lined with gardens at a Sobha apartment community, Bengaluru — illustrative', { w: 798, h: 868 })}
-<ul class="clist" style="margin-top:22px">${SITE.phones.map((p) => `<li>${I.phone}<a href="tel:${p.tel}">${p.display}</a></li>`).join('')}${SITE.emails.map((e) => `<li>${I.mail}<a href="mailto:${e}">${e}</a></li>`).join('')}<li>${I.pin}<span>SS Homes, ${esc(SITE.address.street)}, Bangalore – ${SITE.address.postalCode}</span></li><li>${I.clock}<span>${SITE.hours} · Appointments only</span></li></ul></div>
+<ul class="clist" style="margin-top:22px">${SITE.phones.map((p) => `<li>${I.phone}<a href="tel:${p.tel}">${p.display}</a></li>`).join('')}${SITE.emails.map((e) => `<li>${I.mail}<a href="mailto:${e}">${e}</a></li>`).join('')}<li>${I.pin}<span>WaytoNest Pvt. Ltd., ${esc(SITE.address.street)}, Bengaluru – ${SITE.address.postalCode}</span></li><li>${I.clock}<span>${SITE.hours} · Appointments only</span></li></ul></div>
 </div></section>`,
   ld: [{ '@type': 'ItemList', name: 'Sobha resale projects in Bengaluru', itemListElement: PROJECTS.map((p, i) => ({ '@type': 'ListItem', position: i + 1, url: abs(`/properties/${p.slug}/`), name: p.name })) }],
 });
@@ -517,9 +517,9 @@ ${ctaBand('Let’s Find Your Next Home.', `<a class="btn btn-gold" href="/proper
 // CONTACT
 page({
   path: '/contact/', cur: '/contact/', priority: 0.8, preload: 'hero-contact',
-  title: 'Contact Sobha Resales — SS Homes, Banaswadi, Bangalore',
-  desc: `Call ${P0.display}, WhatsApp or visit SS Homes at Dodda Banaswadi, Bengaluru 560043 for Sobha resale homes. Open Mon–Sun 9am–6pm, by appointment.`,
-  keywords: 'contact sobha resales, ss homes banaswadi, real estate agent banaswadi, sobha resale contact number, property consultant bangalore',
+  title: 'Contact Sobha Resales — Kanakapura Road, Bangalore',
+  desc: `Call ${P0.display}, WhatsApp or visit our Kanakapura Road office, Bengaluru 560062, for Sobha resale homes. Open Mon–Sun 9am–6pm, by appointment.`,
+  keywords: 'contact sobha resales, waytonest, sobha channel partner kanakapura road, real estate agent kanakapura road, sobha resale contact number, property consultant bangalore',
   body: `${hero({ image: 'hero-contact', h1: 'Let’s Find Your Next Home.', crumbs: [['/contact/', 'Contact']], alt: 'Sobha apartment community with lit pergola at dusk — illustrative' })}
 <section><div class="wrap">
 <div class="grid g3">
@@ -528,8 +528,8 @@ page({
 <div class="card" style="padding:24px;flex-direction:row;gap:18px">${I.clock.replace('<svg', '<svg width="38" height="38" style="color:#c9a45c;flex:none"')}<div><h3>Office Hours</h3><strong>${SITE.hours}</strong><br>${SITE.hoursNote}</div></div></div>
 <div class="split" style="margin-top:40px;align-items:stretch">
 <div class="card" style="background:var(--navy);color:#e8e2d4">${img('walkway', 'Garden walkway at a premium Sobha community — illustrative', { w: 798, h: 868 })}
-<div style="padding:26px"><h2 style="color:#fbf6ea;font-size:1.9rem">Visit SS Homes</h2><hr class="rule" style="margin:10px 0 16px"><address style="font-style:normal;display:flex;gap:12px">${I.pin.replace('<svg', '<svg width="22" height="22" style="color:#c9a45c;flex:none"')}<span>${esc(SITE.address.street)},<br>Bangalore, Karnataka – ${SITE.address.postalCode}</span></address>
-<p style="margin-top:16px"><a class="btn btn-line btn-sm" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent('SS Homes, 9 1st Cross Obel Reddy Layout Dodda Banaswadi Bangalore 560043')}" target="_blank" rel="noopener">Get directions</a></p></div></div>
+<div style="padding:26px"><h2 style="color:#fbf6ea;font-size:1.9rem">Visit Our Office</h2><hr class="rule" style="margin:10px 0 16px"><address style="font-style:normal;display:flex;gap:12px">${I.pin.replace('<svg', '<svg width="22" height="22" style="color:#c9a45c;flex:none"')}<span><strong>WaytoNest Pvt. Ltd.</strong><br>${esc(SITE.address.street)},<br>Bengaluru, Karnataka – ${SITE.address.postalCode}</span></address>
+<p style="margin-top:16px"><a class="btn btn-line btn-sm" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(SITE.footerAddress)}" target="_blank" rel="noopener">Get directions</a></p></div></div>
 <div class="panel"><h2>How can we help you?</h2><p class="muted">Tell us about your preferred property. Our team will guide you through your next step.</p>${enquiryForm({ type: 'enquiry' })}</div></div>
 </div></section>
 <section style="padding-top:0"><div class="wrap"><div class="strip" style="border-radius:12px;padding:30px"><div class="wrap" style="padding:0"><div><h2 style="border:0;padding:0">Prefer a conversation?</h2><span>Speak directly with our team.</span></div><div style="margin-left:auto;display:flex;gap:12px;flex-wrap:wrap">${callBtns}</div></div></div></div></section>`,
@@ -583,6 +583,6 @@ ${pages.map((p) => `  <url><loc>${p.loc}</loc><lastmod>${TODAY}</lastmod><priori
 </urlset>
 `);
 fs.writeFileSync(path.join(OUT, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${SITE.url}/sitemap.xml\n`);
-fs.writeFileSync(path.join(OUT, 'llms.txt'), `# Sobha Resales\n\n> Independent resale brokerage for premium and luxury Sobha apartments and villas in Bengaluru, India. Helps buyers find verified resale homes and helps owners sell. Sobha Authorized Channel Partner: WaytoNest Pvt. Ltd.\n\n- Phone: ${SITE.phones.map((p) => p.display).join(', ')}\n- Email: ${SITE.emails.join(', ')}\n- Office: SS Homes, ${SITE.address.street}, Bengaluru ${SITE.address.postalCode}\n- Hours: ${SITE.hours} (${SITE.hoursNote})\n- Brokerage: ${SITE.brokerage}\n\n## Projects\n${PROJECTS.map((p) => `- [${p.name} — ${areaOf(p).full}](${abs(`/properties/${p.slug}/`)})`).join('\n')}\n\n## Pages\n- [Sell your Sobha property](${abs('/sell-sobha-property/')})\n- [Request a visit](${abs('/request-visit/')})\n- [FAQs](${abs('/faqs/')})\n- [Contact](${abs('/contact/')})\n`);
+fs.writeFileSync(path.join(OUT, 'llms.txt'), `# Sobha Resales\n\n> Independent resale brokerage for premium and luxury Sobha apartments and villas in Bengaluru, India. Helps buyers find verified resale homes and helps owners sell. Sobha Authorized Channel Partner: WaytoNest Pvt. Ltd.\n\n- Phone: ${SITE.phones.map((p) => p.display).join(', ')}\n- Email: ${SITE.emails.join(', ')}\n- Office: WaytoNest Pvt. Ltd., ${SITE.address.street}, Bengaluru ${SITE.address.postalCode}\n- Hours: ${SITE.hours} (${SITE.hoursNote})\n- Brokerage: ${SITE.brokerage}\n\n## Projects\n${PROJECTS.map((p) => `- [${p.name} — ${areaOf(p).full}](${abs(`/properties/${p.slug}/`)})`).join('\n')}\n\n## Pages\n- [Sell your Sobha property](${abs('/sell-sobha-property/')})\n- [Request a visit](${abs('/request-visit/')})\n- [FAQs](${abs('/faqs/')})\n- [Contact](${abs('/contact/')})\n`);
 fs.writeFileSync(path.join(OUT, 'site.webmanifest'), JSON.stringify({ name: 'Sobha Resales', short_name: 'Sobha Resales', start_url: '/', display: 'standalone', background_color: '#f8f3ea', theme_color: '#0b1629', icons: [{ src: '/icon-192.png', sizes: '192x192', type: 'image/png' }, { src: '/icon-512.png', sizes: '512x512', type: 'image/png' }, { src: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }] }));
 console.log(`Built ${pages.length} pages → ${SITE.url}`);

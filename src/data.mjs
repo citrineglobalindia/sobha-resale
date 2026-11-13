@@ -19,13 +19,13 @@ export const SITE = {
   channelPartner: 'WaytoNest Pvt. Ltd.',
   footerAddress: '3rd Floor, 201, Swamy Vivekananda Rd, 2nd Cross Rd, Narayana Nagar 1st Block, BCMC Layout, Kanakapura Road, Bengaluru, Karnataka 560062',
   whatsapp: '919739612117',
-  emails: ['ickrishh@gmail.com', 'Deepa@sshomesblr.com'],
+  emails: ['info@waytonest.in'],
   address: {
-    street: '9, 1st Cross, Obel Reddy Layout, Dodda Banaswadi, Opp. Asha Nursing Home',
+    street: '3rd Floor, 201, Swamy Vivekananda Rd, 2nd Cross Rd, Narayana Nagar 1st Block, BCMC Layout, Kanakapura Road',
     locality: 'Bengaluru',
     region: 'Karnataka',
     regionCode: 'KA',
-    postalCode: '560043',
+    postalCode: '560062',
     country: 'IN',
   },
   hours: 'Mon–Sun: 9am–6pm',
@@ -101,7 +101,7 @@ export const FAQS = {
   General: [
     ['What does Sobha Resales specialize in?', 'Sobha Resales specializes in premium and luxury resale homes across Sobha communities in Bengaluru — helping buyers find verified resale apartments and villas, and helping owners sell their Sobha property.'],
     ['Which Sobha projects do you focus on?', 'Our focus projects include Sobha Victoria Park (Hennur), Sobha Windsor (Whitefield), Sobha Town Park (Hosur Road), Sobha Dream Acres (Panathur), Sobha Lifestyle Legacy (Devanahalli), Sobha Royal Pavilion (Sarjapur), Sobha Sentosa (Panathur Road), Sobha Indraprastha (Rajajinagar), Sobha Dream Gardens (Thanisandra) and Sobha Oakshire (Devanahalli).'],
-    ['When can I visit your office?', 'Our SS Homes office at Dodda Banaswadi, Bengaluru 560043 is open Monday to Sunday, 9am–6pm, on appointments only. Call +91 97396 12117 to book a time.'],
+    ['When can I visit your office?', 'Our office at Narayana Nagar 1st Block, Kanakapura Road, Bengaluru 560062 is open Monday to Sunday, 9am–6pm, on appointments only. Call +91 97396 12117 to book a time.'],
     ['Is Sobha Resales a Sobha channel partner?', 'Yes. Sobha Resales works through WaytoNest Pvt. Ltd., a Sobha Authorized Channel Partner, helping buyers and owners transact resale homes in Sobha-built communities across Bengaluru.'],
   ],
   'Buying a Home': [
