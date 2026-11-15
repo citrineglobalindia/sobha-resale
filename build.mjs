@@ -97,7 +97,6 @@ const orgLd = {
   areaServed: [{ '@type': 'City', name: 'Bengaluru' }, ...Object.values(AREAS).map((a) => ({ '@type': 'Place', name: `${a.full}, Bengaluru` }))],
   openingHoursSpecification: [{ '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'], opens: '09:00', closes: '18:00' }],
   contactPoint: SITE.phones.map((p) => ({ '@type': 'ContactPoint', telephone: p.tel, contactType: 'sales', areaServed: 'IN', availableLanguage: ['English', 'Kannada', 'Hindi'] })),
-  founder: [{ '@type': 'Person', name: 'Srinivas Prabhu', jobTitle: 'Co-Founder & Director' }, { '@type': 'Person', name: 'Sevanth Kumar', jobTitle: 'Co-Founder & Director' }],
   priceRange: '₹₹₹₹',
   knowsAbout: ['Sobha resale flats', 'Resale apartments in Bangalore', 'Luxury villas in Bangalore', 'Assignment Agreement', ...PROJECTS.map((p) => p.name)],
   sameAs: [],
@@ -248,7 +247,6 @@ ${img('clubhouse', 'Clubhouse and water feature at a luxury Sobha community, Ben
 <details class="acc"><summary>Sell Your Sobha Property</summary><div class="ans"><p>Accurate pricing · Listing &amp; marketing · Buyer sourcing · Property showings · Negotiation · Documentation &amp; assignment support. <a href="/sell-sobha-property/">Learn more</a>.</p></div></details>
 </div></div></section>
 ${whySection()}
-<section><div class="wrap"><h2 class="center">Meet Our Dedicated Team</h2><p class="center muted">A hands-on, experienced team committed to helping you buy or sell your Sobha home with confidence.</p><hr class="rule c">${team()}</div></section>
 <section class="bg-paper"><div class="wrap"><h2 class="title-lines">Sobha Resale Homes by Location</h2><hr class="rule c">
 <p class="center muted" style="max-width:720px;margin:0 auto 26px">Looking for a Sobha resale flat in a specific part of Bengaluru? Browse resale homes by neighbourhood.</p>
 <div class="chips" style="justify-content:center">${Object.entries(AREAS).map(([k, a]) => `<a href="/locations/${k}/">Sobha resale in ${a.name}</a>`).join('')}</div></div></section>
@@ -264,14 +262,13 @@ ${whySection()}
 page({
   path: '/about/', cur: '/about/', priority: 0.8, preload: 'hero-about',
   title: 'About Sobha Resales — Sobha Resale Experts in Bangalore',
-  desc: 'Sobha Resales specializes in premium Sobha resale homes in Bengaluru. Meet co-founders Srinivas Prabhu & Sevanth Kumar.',
-  keywords: 'sobha resales, ss homes bangalore, sobha resale agent, sobha resale broker bangalore, real estate consultant bangalore, srinivas prabhu, sevanth kumar',
+  desc: 'Sobha Resales specializes in premium Sobha resale homes in Bengaluru.',
+  keywords: 'sobha resales, ss homes bangalore, sobha resale agent, sobha resale broker bangalore, real estate consultant bangalore',
   body: `${hero({ image: 'hero-about', h1: 'Your Trusted Partner in Sobha Resales', crumbs: [['/about/', 'About Us']], alt: 'Entrance of a premium Sobha community at dusk — illustrative' })}
 <section><div class="wrap split">${img('pergola', 'Landscaped pergola and gardens in a premium Sobha community — illustrative', { w: 992, h: 552 })}
 <div><hr class="rule" style="margin-top:0"><h2>Premium homes.<br>Personal expertise.</h2><p>Sobha Resales specializes in premium and luxury resale homes across Sobha’s top communities in Bengaluru. With verified listings and expert knowledge, we help homebuyers access high-quality and high-value resale properties built by Sobha.</p>
 <p>From Hennur and Thanisandra in the north to Whitefield, Panathur and Sarjapur in the east, Rajajinagar in the west and Devanahalli near the airport, we track the resale market in every community we serve — so our clients get realistic prices, genuine inventory and a smooth transaction.</p></div></div></section>
 ${whySection()}
-<section><div class="wrap"><h2 class="center">The Team Behind Sobha Resales</h2><hr class="rule c">${team()}</div></section>
 <section class="bg-paper"><div class="wrap" style="max-width:900px">
 <details class="acc" open><summary>Resale Market Reality</summary><div class="ans"><p>Supply-driven inventory. Limited availability. Fast movement. Quick decision-making required.</p></div></details>
 <details class="acc" open><summary>Brokerage Terms</summary><div class="ans"><p>${SITE.brokerage}</p></div></details>
