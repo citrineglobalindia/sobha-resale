@@ -52,14 +52,14 @@ const NAV = [['/', 'Home'], ['/about/', 'About'], ['/properties/', 'Properties']
 
 const header = (cur) => `<a class="skip" href="#main">Skip to content</a>
 <header class="hdr"><div class="wrap">
-<a class="logo" href="/" aria-label="Sobha Resales — Sobha Authorized Channel Partner, home"><img src="/img/brand/sobha-channel-partner-light.png" alt="Sobha — Authorized Channel Partner" width="293" height="93"></a>
+<a class="logo" href="/" aria-label="Sobha Resales — home"><span class="brand"><img src="/img/brand/sobha-wordmark-light.png" alt="Sobha Resales" width="251" height="53"><small>RESALES</small></span></a>
 <button class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><svg width="22" height="22" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
 <nav id="nav" class="nav" aria-label="Main">${NAV.map(([h, t]) => `<a href="${h}"${cur === h ? ' aria-current="page"' : ''}>${t}</a>`).join('')}<a class="btn btn-gold btn-sm" href="/request-visit/">Enquire Now</a></nav>
 </div></header>`;
 
 const footer = () => `<footer class="ftr"><div class="wrap">
 <div class="cols">
-<div><a class="logo" href="/"><img src="/img/brand/sobha-channel-partner-light.png" alt="Sobha — Authorized Channel Partner" width="293" height="93" loading="lazy"></a>
+<div><a class="logo" href="/"><span class="brand"><img src="/img/brand/sobha-wordmark-light.png" alt="Sobha Resales" width="251" height="53" loading="lazy"><small>RESALES</small></span></a>
 <p style="margin:16px 0 0;color:var(--gold-2);font-weight:700;font-size:.95rem">Channel Partner: ${SITE.channelPartner}</p>
 <p style="margin-top:12px">Premium and luxury resale apartments &amp; villas across Sobha communities in Bengaluru. Buy, sell and visit with a team that knows every project.</p></div>
 <div><h3>Quick Links</h3><ul>${NAV.map(([h, t]) => `<li><a href="${h}">${t}</a></li>`).join('')}<li><a href="/request-visit/">Request a Visit</a></li></ul></div>
@@ -90,7 +90,7 @@ const ORG_ID = abs('/#organization');
 const orgLd = {
   '@type': ['RealEstateAgent', 'LocalBusiness'], '@id': ORG_ID,
   name: 'Sobha Resales', alternateName: ['Sobha Resales by SS Homes', 'SS Homes', 'WaytoNest Pvt. Ltd.'],
-  url: abs('/'), logo: abs('/img/brand/sobha-channel-partner-dark.png'), image: abs('/img/og-cover.jpg'),
+  url: abs('/'), logo: abs('/img/brand/sobha-wordmark-dark.png'), image: abs('/img/og-share.jpg'),
   description: 'Sobha Resales specializes in premium and luxury resale apartments and villas across Sobha communities in Bengaluru — for buyers and sellers.',
   telephone: P0.tel, email: SITE.emails[0],
   address: { '@type': 'PostalAddress', streetAddress: SITE.address.street, addressLocality: SITE.address.locality, addressRegion: SITE.address.region, postalCode: SITE.address.postalCode, addressCountry: SITE.address.country },
@@ -105,7 +105,7 @@ const orgLd = {
 const websiteLd = { '@type': 'WebSite', '@id': abs('/#website'), url: abs('/'), name: 'Sobha Resales', inLanguage: 'en-IN', publisher: { '@id': ORG_ID } };
 const faqLd = (items) => ({ '@type': 'FAQPage', mainEntity: items.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) });
 
-function page({ path: p, title, desc, keywords, h1Img, body, ld = [], cur, ogImg = '/img/og-cover.jpg', type = 'website', priority = 0.7, preload }) {
+function page({ path: p, title, desc, keywords, h1Img, body, ld = [], cur, ogImg = '/img/og-share.jpg', type = 'website', priority = 0.7, preload }) {
   const url = abs(p);
   const graph = { '@context': 'https://schema.org', '@graph': [websiteLd, orgLd, { '@type': 'WebPage', '@id': url + '#webpage', url, name: title, description: desc, isPartOf: { '@id': abs('/#website') }, about: { '@id': ORG_ID }, inLanguage: 'en-IN', primaryImageOfPage: abs(ogImg) }, ...ld] };
   const html = `<!doctype html>

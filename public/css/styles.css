@@ -467,3 +467,11 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold-d);
   .fb-partner{order:-1;justify-self:center;padding:10px 22px}
   .fb-copy,.fb-credit{text-align:center}
 }
+
+/* Wordmark + RESALES label */
+.logo .brand{display:flex;flex-direction:column;align-items:flex-start;gap:5px}
+.logo .brand img{height:30px;width:auto}
+.logo .brand small{font-family:var(--sans);font-size:.68rem;font-weight:600;letter-spacing:.42em;color:#cdbf9f;line-height:1;margin:0;padding-left:2px}
+.ftr .logo .brand img{height:38px}
+.ftr .logo .brand small{font-size:.78rem}
+@media (max-width:620px){.logo .brand img{height:26px}.logo .brand small{font-size:.6rem;letter-spacing:.38em}.ftr .logo .brand img{height:32px}}
